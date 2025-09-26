@@ -1,0 +1,42 @@
+# GoFrame Configuration File
+# For more information, please visit: https://goframe.org/pages/viewpage.action?pageId=1114119
+
+# Server configuration
+server:
+  address:     ":8000"           # Server listening address
+  serverRoot:  "public"          # Static file serving directory
+  dumpRouterMap: true            # Whether to dump router map when server starts
+
+# Logger configuration
+logger:
+  level:  "all"                  # Log level: debug, info, notice, warn, error, critical
+  stdout: true                   # Whether to output to stdout
+  file:   "logs/server.log"      # Log file path
+
+# Database configuration
+database:
+  default:
+    link: "sqlite:data.db"       # SQLite database file
+    debug: true                  # Enable debug mode
+    dryRun: false                # Dry run mode
+    maxIdle: 10                  # Maximum idle connections
+    maxOpen: 10                  # Maximum open connections
+    maxLifetime: 30              # Connection max lifetime in seconds
+
+# Redis configuration (optional)
+redis:
+  default:
+    address: "127.0.0.1:6379"
+    db: 0
+    pass: ""
+    maxIdle: 10
+    maxActive: 10
+    idleTimeout: 10
+    maxConnLifetime: 10
+
+# CORS configuration
+cors:
+  allowOrigin:  "*"              # Allowed origins
+  allowMethods: "GET,PUT,POST,DELETE,OPTIONS"
+  allowHeaders: "Origin,Content-Type,Accept,Authorization,X-Requested-With"
+  allowCredentials: true
